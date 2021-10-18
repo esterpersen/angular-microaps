@@ -1,0 +1,120 @@
+<html class="h-100">
+  <body class="d-flex h-100 text-center text-light bg-dark">
+    <div class="cover-container d-flex w-100 p-3 mx-auto flex-column">
+      <header class="mb-auto">
+        <div>
+          <h3 class="float-md-start mb-0"></h3>
+        </div>
+      </header>
+
+      <main class="px-3" class="mb-auto">
+        <h1>QR Code Generator</h1>
+        <p class="lead">
+          Choose from the following options to update the QR code:
+        </p>
+
+        <label>
+          Change name:
+          <input type="text" [(ngModel)]="values" placeholder="name"
+        /></label>
+        <br />
+        <br />
+        <strong>Change to:</strong>
+        <br />
+        <div class="btn-group" role="group">
+          <button
+            type="button"
+            class="btn btn-outline-light"
+            (click)="qrData('Clarke Griffin')"
+          >
+          Clarke Griffin
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-light"
+            (click)="qrData('Blanca Rodriguez')"
+          >
+          Blanca Rodriguez
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-light"
+            (click)="qrData('Mary Poppins')"
+          >
+          Mary Poppins
+          </button>
+        </div>
+        <br />
+        <br />
+        <strong>Change width:</strong>
+        <br />
+        <div class="btn-group" role="group">
+          <button class="btn btn-outline-light" (click)="qrWidth(550)">
+            550
+          </button>
+          <button class="btn btn-outline-light" (click)="qrWidth(450)">
+            450
+          </button>
+          <button class="btn btn-outline-light" (click)="qrWidth(350)">
+            350
+          </button>
+          <button class="btn btn-outline-light" (click)="qrWidth(250)">
+            250
+          </button>
+        </div>
+        <br />
+        <br />
+        <strong>Update Level:</strong>
+        <br />
+        <div class="btn-group" role="group">
+          <button class="btn btn-outline-light" (click)="qrLevel('L')">
+            L
+          </button>
+          <button class="btn btn-outline-light" (click)="qrLevel('M')">
+            M
+          </button>
+          <button class="btn btn-outline-light" (click)="qrLevel('Q')">
+            Q
+          </button>
+          <button class="btn btn-outline-light" (click)="qrLevel('H')">
+            H
+          </button>
+        </div>
+        <br />
+        <br />
+        <strong>Change foreground colour:</strong>
+        <br />
+        <div class="btn-group" role="group">
+          <button class="btn btn-outline-light" (click)="qrFrgd('black')">
+            Black
+          </button>
+          <button class="btn btn-outline-light" (click)="qrFrgd('red')">
+            Red
+          </button>
+          <button class="btn btn-outline-light" (click)="qrFrgd('green')">
+            Green
+          </button>
+          <button class="btn btn-outline-light" (click)="qrFrgd('blue')">
+            Blue
+          </button>
+        </div>
+        <br />
+        <br />
+        <div >
+          <qr-code [value]="values" [size]="width" [level]="level" [foreground]="foreground" [padding]=10 ></qr-code>
+        </div>
+      </main>
+
+      <footer class="mt-auto text-light-50">
+        <p>
+          Cover template for
+          <a href="https://getbootstrap.com/" class="text-light"
+            >Bootstrap v5.0</a
+          >, by <a href="https://twitter.com/mdo" class="text-light">@mdo</a>.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<!-- PARÀMETRES https://www.npmjs.com/package/angular2-qrcode -->
